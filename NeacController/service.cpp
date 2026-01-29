@@ -10,7 +10,7 @@ int start_driver() {
         return 1;
     }
 
-    SC_HANDLE service = OpenService(
+    SC_HANDLE service = OpenServiceW(
         scm,
         SERVICE_NAME,
         SERVICE_QUERY_STATUS | SERVICE_START | SERVICE_STOP
@@ -21,7 +21,7 @@ int start_driver() {
         if (err == ERROR_SERVICE_DOES_NOT_EXIST) {
             printf("[!] service not exist\n");
         } else {
-            printf("[!] OpenService failed (Error: %d)\n", err);
+            printf("[!] OpenServiceW failed (Error: %d)\n", err);
         }
         CloseServiceHandle(scm);
         return 1;
@@ -72,7 +72,7 @@ int stop_driver() {
         return 1;
     }
 
-    SC_HANDLE service = OpenService(
+    SC_HANDLE service = OpenServiceW(
         scm,
         SERVICE_NAME,
         SERVICE_QUERY_STATUS | SERVICE_START | SERVICE_STOP
@@ -83,7 +83,7 @@ int stop_driver() {
         if (err == ERROR_SERVICE_DOES_NOT_EXIST) {
             printf("[!] service not exist\n");
         } else {
-            printf("[!] OpenService failed (Error: %d)\n", err);
+            printf("[!] OpenServiceW failed (Error: %d)\n", err);
         }
         CloseServiceHandle(scm);
         return 1;
