@@ -15,7 +15,8 @@ ext_modules = [
             "service.cpp"
         ],
         include_dirs=[
-            pybind11.get_cmake_dir() + "/../../../include",
+            pybind11.get_include(),
+            pybind11.get_include(user=True)
         ],
         libraries=["fltlib", "advapi32", "kernel32"],
         language='c++'
