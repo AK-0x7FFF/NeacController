@@ -29,15 +29,6 @@ if %errorlevel% neq 0 (
 )
 
 echo.
-echo Installing module...
-python setup.py install
-if %errorlevel% neq 0 (
-    echo ERROR: Failed to install module
-    pause
-    exit /b 1
-)
-
-echo.
 echo =====================================
 echo Build completed successfully!
 echo.
